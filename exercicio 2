@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace string
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite uma palavra: ");
+            string input = Console.ReadLine();
+
+            int count = 0;
+            foreach (char c in input)
+            {
+                if (char.ToLower(c) == 'a')
+                {
+                    count++;
+                }
+            }
+
+            if (count > 0)
+            {
+                Console.WriteLine($"A letra 'a' aparece {count} vezes na palavra\n ");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("A letra 'a' não foi encontrada na palavra\n ");
+                Console.ReadLine();
+            }
+        }
+
+
+    }
+}
