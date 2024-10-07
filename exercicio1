@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SequenciaDeFibonacci
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Digite um número: ");
+            int numero = int.Parse(Console.ReadLine());
+
+            if (PertenceFibonacci(numero))
+            {
+                Console.WriteLine($"O número {numero} pertence à sequência de Fibonacci\n ");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine($"O número {numero} não pertence à sequência de Fibonacci\n");
+                Console.ReadLine();
+            }
+        }
+
+        static bool PertenceFibonacci(int numero)
+        {
+            if (numero == 0 || numero == 1)
+            {
+                return true;
+            }
+
+            int a = 0;
+            int b = 1;
+            int c = a + b;
+
+            while (c <= numero)
+            {
+                if (c == numero)
+                {
+                    return true;
+                }
+
+                a = b;
+                b = c;
+                c = a + b;
+            }
+
+            return false;
+        }
+    }
+
+}
+    
+
